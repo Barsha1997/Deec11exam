@@ -1,37 +1,19 @@
-package org.example.railwayticketreservation;
+package org.example.basics;
 
 public class RailwayReservation {
     private String passengerName;
     private int passengerAge;
+
     private String chosenSeat;
     private  String typeOfReservation;
     private double amountPaid;
-    private  boolean isSeniorCitizen =true;
+    private  boolean isSeniorCitizen;
 
-    public boolean RailwayReservation(String passengerName, int passengerAge, String chosenSeat, String typeOfReservation) {
+    public void RailwayReservation(String passengerName, int passengerAge, String chosenSeat, String typeOfReservation) {
         this.passengerName = passengerName;
         this.passengerAge = passengerAge;
         this.chosenSeat = chosenSeat;
         this.typeOfReservation = typeOfReservation;
-
-
-        if (passengerAge > 60) {
-            this.chosenSeat = "berth";
-             boolean isSeniorCitizen = true;
-            System.out.println("integer value "+ isSeniorCitizen);
-            int val = (isSeniorCitizen)?1:0;
-            System.out.println(val);;
-            reservationType();
-        }
-        return false;
-    }
-
-
-    public  void reservationType(){
-        if((typeOfReservation=="AC")||(typeOfReservation=="ac")){
-            amountPaid =100;
-        }else
-            amountPaid=50;
 
     }
 
@@ -83,8 +65,22 @@ public class RailwayReservation {
         isSeniorCitizen = seniorCitizen;
     }
 
+    @Override
+    public String toString() {
+        return "RailwayReservation{" +
+                "passengerName='" + passengerName + '\n' +
+                " passengerAge=" + passengerAge +'\n'+
+                " chosenSeat=" + chosenSeat + '\n' +
+                " typeOfReservation='" + typeOfReservation + '\n' +
+                " amountPaid=" + amountPaid +'\n'+
+                " isSeniorCitizen=" + isSeniorCitizen +
+                '}';
 
 
+    }
 
+    public boolean isnotSeniorCitizen() {
+        return false;
 
+    }
 }
